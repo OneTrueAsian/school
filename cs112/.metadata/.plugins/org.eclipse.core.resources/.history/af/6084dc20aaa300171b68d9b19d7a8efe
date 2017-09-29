@@ -1,0 +1,150 @@
+/* Vec.cpp defines the methods for Vec, a simple vector class.
+ * Student Name:
+ * Date:
+ * Begun by: Joel C. Adams, for CS 112 at Calvin College.
+ */
+
+#include "Vec.h"
+#include <cstdlib>
+#include <stdexcept>
+#include <ostream>
+Vec::Vec() {
+	mySize = 0;
+	myArray = NULL;
+}
+
+Vec::Vec(unsigned size) {
+	mySize = size;
+	myArray = new Item[size]();
+	if (mySize > 0) {
+		for (unsigned i = 0; i < size; i++) {
+			myArray[i] = 0;
+		}
+	} else {
+		myArray = NULL;
+	}
+}
+
+Vec::Vec(const Vec& original) {
+	mySize = original.mySize;
+	myArray = new Item[original.mySize]();
+	if (original.mySize > 0) {
+		for (unsigned i = 0; i < original.mySize; i++) {
+			myArray[i] = original.myArray[i];
+		}
+	} else {
+		myArray = NULL;
+	}
+}
+Vec::~Vec() {
+	mySize = 0;
+	delete[] myArray;
+	myArray = NULL;
+}
+
+Vec& Vec::operator=(const Vec& original) {
+
+	if (original.myArray != myArray) {
+		mySize = original.mySize;
+		delete[] myArray;
+		myArray = new Item[original.mySize]();
+
+		if (original.mySize > 0) {
+			for (unsigned i = 0; i < mySize; i++) {
+				myArray[i] = original.myArray[i];
+			}
+		} else {
+			myArray = NULL;
+		}
+	}
+	return *this;
+}
+
+unsigned Vec::getSize() const {
+	return mySize;
+}
+
+void Vec::setItem(unsigned index, const Item& it) {
+	if (myArray != NULL) {
+
+		if (index >= mySize) {
+			throw range_error("Vec(index) is too large!");
+		} else {
+			myArray[index] = it;
+		}
+	} else {
+		throw range_error("setItem(vec can not be empty)");
+	}
+}
+
+Item Vec::getItem(unsigned index) const {
+	if (myArray != NULL) {
+		if (index >= mySize) {
+			throw range_error("Vec(index) is too large for the vector");
+		} else {
+			return myArray[index];
+		}
+	} else {
+		throw range_error("Vec cannot be empty");
+	}
+}
+
+void Vec::setSize(unsigned newSize) {
+	if (mySize != newSize) {
+		if (newSize == 0) {
+			delete[] myArray;
+			myArray = NULL;
+			mySize = 0;
+		}
+
+		else {
+
+			Item* newArray = new Item[newSize]();
+			if (mySize < newSize) {
+				for (unsigned i = 0; i < mySize; i++) {
+					newArray[i] = myArray[i];
+				}
+				for (unsigned i = mySize + 1; i < newSize; i++) {
+					newArray[i] = 0;
+
+				}
+				mySize = newSize;
+
+			} else {
+				mySize = newSize;
+				for (unsigned i = 0; i < mySize; i++) {
+					newArray[i] = myArray[i];
+				}
+			}
+			myArray = newArray;
+		}
+	}
+}
+
+bool Vec::operator==(const Vec& v2) {
+	if (mySize != v2.mySize) {
+		return false;
+	}
+	for (unsigned i = 0; i < mySize; i++) {
+		if (myArray[i] != v2.myArray[i]) {
+			return false;
+		}
+	}
+	return true;
+}
+
+void Vec::writeTo(ostream& out) const {
+
+	for (unsigned i = 0; i < mySize; i++) {
+		out << mySize << "\n";
+		out << myArray << "\n";
+		unsigned out<< i.getSize<<"\n";
+
+
+	}
+}
+
+void Vec::readFrom(istream& in){
+
+
+}

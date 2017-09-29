@@ -1,0 +1,17 @@
+/*
+ * Application.cpp
+ *
+ *  Created on: Sep 28, 2017
+ *      Author: jjf25
+ */
+
+#include "Application.h"
+Application::Application() {
+	// TODO Auto-generated constructor stub
+
+}
+
+void Application::run(){
+	cout<<"Welcome to the vector program!"<< endl;
+
+}

@@ -1,0 +1,100 @@
+/* array.cpp defines "C style" array operations
+ * Name:joey faas
+ * Date:9/19/17
+ * Begun by: Joel Adams, for CS 112 at Calvin College.
+ */
+
+#include "Array.h"
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+void initialize(double *a, unsigned size) {
+	int val = 0;
+	for (unsigned i = 0; i < size; i++) {
+		val = i + 1;
+		a[i] = val;
+	}
+}
+
+void print(double *a, unsigned size) {
+	for (unsigned i = 0; i < size; i++) {
+		cout << *a << '\t';
+		a++;
+	}
+}
+
+double average(double *a, unsigned size) {
+	double sum = 0;
+	double avg = 0;
+	for (unsigned i = 0; i < size; i++) { //  loops through the array
+		sum += *a; // the current location of a* + sum
+		a++;
+	}
+	avg = sum / size; // get average from dividing the sum and the size
+	return avg;
+}
+
+double sum(double *a, int size) {
+	double sum = 0;
+	for (int i = 0; i < size; i++) { //  loops through the array
+		sum += *a; // the current location of a* + sum
+		a++;
+	}
+	return sum;
+}
+
+void read(istream& in, double *a, int size) {
+	for (int i = 0; i < size; i++) {
+		in >> *a;
+		a++;
+	}
+}
+
+void fill(const string& fileName, double *&a, int &numValues) {
+	delete[] a;
+	ifstream fin(fileName.c_str());
+	assert(fin.is_open());
+
+	fin >> numValues;
+	double* aArray = new double[numValues];
+
+	for (int i = 0; i < numValues; i++) {
+		fin >> aArray[i];
+	}
+
+	a = aArray;
+	fin.close();
+}
+
+void resize(double *&a, int oldSize, int newSize) {
+	double* b = new double[newSize];
+	if (newSize > oldSize) {
+		for (int i = 0; i < oldSize; i++) {
+			b[i] = a[i];
+		}
+	} else {
+		if (oldSize > newSize) {
+			for (int i = 0; i < newSize; i++) {
+				b[i] = a[i];
+			}
+		}
+	}
+	delete[] a;
+	a = b;
+}
+
+void concat(double *a1, int size1, double *a2, int size2, double *&a3, int &size3) {
+	delete[] a3;
+	a3 = new double[size1 + size2];
+
+	for (int i = 0; i < size1 + size2; i++) {
+		if (i < size1) {
+			a3[i] = a1[i];
+		} else {
+			(a3[i] = a2[i - size1]);
+		}
+	}
+
+}
+

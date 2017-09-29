@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;project01/PlaylsitManager.cpp&apos; to &apos;PlaylistManager.cpp&apos;" description="Rename resource &apos;PlaylsitManager.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="PlaylsitManager.cpp" name="PlaylistManager.cpp" stamp="1505850555778" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;project01/PlaylsitManager.h&apos; to &apos;PlaylistManager.h&apos;" description="Rename resource &apos;PlaylsitManager.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="PlaylsitManager.h" name="PlaylistManager.h" stamp="1505850709454" updateReferences="true"/>
+</session>

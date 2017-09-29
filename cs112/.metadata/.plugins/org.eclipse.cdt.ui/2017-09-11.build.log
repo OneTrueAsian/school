@@ -1,0 +1,36 @@
+20:50:09 **** Build of configuration Debug for project 2017-09-11 ****
+Info: Configuration "Debug" uses tool-chain "Cygwin GCC" that is unsupported on this system, attempting to build anyway.
+make all 
+Building file: ../Employee.cpp
+Invoking: Cygwin C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Employee.d" -MT"Employee.o" -o "Employee.o" "../Employee.cpp"
+Finished building: ../Employee.cpp
+ 
+Building file: ../EmployeeTester.cpp
+Invoking: Cygwin C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"EmployeeTester.d" -MT"EmployeeTester.o" -o "EmployeeTester.o" "../EmployeeTester.cpp"
+Finished building: ../EmployeeTester.cpp
+ 
+Building file: ../HourlyEmployee.cpp
+Invoking: Cygwin C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"HourlyEmployee.d" -MT"HourlyEmployee.o" -o "HourlyEmployee.o" "../HourlyEmployee.cpp"
+Finished building: ../HourlyEmployee.cpp
+ 
+Building file: ../SalariedEmployee.cpp
+Invoking: Cygwin C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"SalariedEmployee.d" -MT"SalariedEmployee.o" -o "SalariedEmployee.o" "../SalariedEmployee.cpp"
+Finished building: ../SalariedEmployee.cpp
+ 
+Building file: ../main.cpp
+Invoking: Cygwin C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: 2017-09-11.exe
+Invoking: Cygwin C++ Linker
+g++  -o "2017-09-11.exe"  ./Employee.o ./EmployeeTester.o ./HourlyEmployee.o ./SalariedEmployee.o ./main.o   
+Finished building target: 2017-09-11.exe
+ 
+
+20:50:11 Build Finished (took 1s.49ms)
+
