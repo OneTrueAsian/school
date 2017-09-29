@@ -13,20 +13,25 @@ Application::Application() {
 
 void Application::run() {
 	cout << "Welcome to the vector program!" << endl;
-	cout << "Please enter the number of dimensions:" << flush;
+	cout << "Please enter the number of dimension:" << flush;
 	unsigned dim, numVectors;
 	cin >> dim;
-	cout << "Please enter the" << dim << "coordinates of the starting location:"
-			<< flush;
-
+	cout<< "please enter the " << dim <<" coordinates of the starting location:" << endl;
 	Vec start(dim);
+
 	for (unsigned i = 0; i < dim; i++) {
+		cin >> start[i];
+	}
+	cout << "How many vectors will there be?" << endl;
+	cin >> numVectors;
+	for (unsigned i = 0; i < numVectors; i++) {
 		Vec add(dim);
-		cout << "Please enter the " << dim << "the corrdinates of the vectors:"
-				<< flush;
+		cout << "Please enter " << dim << " numbers for the " << numVectors
+				<< " vectors:" << endl;
 		for (unsigned i = 0; i < dim; i++) {
 			cin >> add[i];
 		}
+
 		start = start + add;
 	}
 
@@ -41,3 +46,4 @@ void Application::run() {
 	cout << "}" << endl;
 
 }
+
