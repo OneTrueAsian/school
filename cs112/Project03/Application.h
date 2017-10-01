@@ -1,8 +1,6 @@
-/*
- * Application.h
- *
- *  Created on: Sep 28, 2017
- *      Author: jjf25
+/* Application.cpp: header for Application.cpp
+ * Student Name: Joey Faas, Ian Park
+ * Date: 9/27/17
  */
 
 #ifndef APPLICATION_H_

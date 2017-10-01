@@ -1,8 +1,6 @@
-/*
- * Application.cpp
- *
- *  Created on: Sep 28, 2017
- *      Author: jjf25
+/* Application.cpp: Runs application interface
+ * Student Name: Joey Faas, Ian Park
+ * Date: 9/27/17
  */
 
 #include "Application.h"
