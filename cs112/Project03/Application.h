@@ -12,8 +12,8 @@
 
 class Application: public Vec {
 public:
-	Application();
-	void run();
+    Application();
+    void run();
 };
 
 #endif /* APPLICATION_H_ */
