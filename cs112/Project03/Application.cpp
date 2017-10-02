@@ -19,12 +19,12 @@ void Application::run() {
     for (unsigned i = 0; i < dim; i++) {
         cin >> start[i];
     }
-    cout << "How many vectors will there be? " << flush;
+    cout << "How many vectors will there be? " << endl;
     cin >> numVectors;
     for (unsigned i = 0; i < numVectors; i++) {
         Vec add(dim);
         cout << "Please enter " << dim << " numbers for the " << i << "th vector of the " <<  numVectors
-                << " vectors: " << flush;
+                << " vectors: " << endl;
         for (unsigned i = 0; i < dim; i++) {
             cin >> add[i];
         }
