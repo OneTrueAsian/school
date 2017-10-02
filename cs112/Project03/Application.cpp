@@ -13,7 +13,7 @@ void Application::run() {
     cout << "Please enter the number of dimension: " << flush;
     unsigned dim, numVectors;
     cin >> dim;
-    cout<< "Please enter the " << dim <<" coordinates of the starting location: " << flush;
+    cout<< "Please enter the " << dim <<" coordinates of the starting location: " << endl;
     Vec start(dim);
 
     for (unsigned i = 0; i < dim; i++) {
