@@ -200,11 +200,9 @@ void Vec::writeToStream(ostream& out) const {
  *                to those from the istream
  */
 void Vec::readFromStream(istream& in) {
-  unsigned count = 0;
-  int x;
-
-  while (count < mySize && in >> x)
-    myArray[count++] = x;
+  for (unsigned i = 0; i < mySize; i++) {
+    in >> myArray[i];
+  }
 }
 
 /* Inequality operator, check inequality of two vectors
