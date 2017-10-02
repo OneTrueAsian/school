@@ -46,7 +46,7 @@ Vec::Vec(unsigned size) {
     return;
   }
   mySize=size;
-  myArray = new double[size]();
+  myArray = new Item [size]();
 }
 
 /* Copy Constructor
@@ -60,7 +60,7 @@ Vec::Vec(const Vec& original) {
   if ( mySize == 0 ) {
     myArray=NULL;
   } else {
-    myArray = new double[mySize]();
+    myArray = new Item [mySize]();
     for (unsigned i = 0; i < mySize; i++) {
       myArray[i] = original.myArray[i];
     }
@@ -80,7 +80,7 @@ Vec& Vec::operator=(const Vec& original) {
         this->myArray = NULL;
       }
       if ( original.mySize > 0 ) {
-        this->myArray = new double[original.mySize]();
+        this->myArray = new Item [original.mySize]();
       }
       this->mySize = original.mySize;
     }
@@ -145,7 +145,7 @@ void Vec::setSize(unsigned newSize) {
       mySize = 0;
     }
     else {
-      Item* newArray = new double[newSize]();
+      Item* newArray = new Item [newSize]();
       if ( mySize < newSize ) {
         for (unsigned i = 0; i < mySize; i++) {
           newArray[i] = myArray[i];
