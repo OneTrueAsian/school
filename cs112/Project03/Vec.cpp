@@ -179,10 +179,8 @@ bool Vec::operator==(const Vec& v2) {
         return false;
       }
     }
-    return true;
-  } else {
-    return false;
   }
+    return true;
 }
 
 /* Write values in the vector to ostream
